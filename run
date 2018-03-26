@@ -1,0 +1,2 @@
+#!/bin/sh
+python3 ID3_Algorithm.py
