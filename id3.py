@@ -84,6 +84,8 @@ def input_reading():
     for line in fileinput.input():
         lines.append(line)
 
+    print(lines)
+
     for line in lines:
         # check if line is not a comment
         if line[0] is not '%':
