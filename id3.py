@@ -6,7 +6,7 @@
 # Implementation of ID3 based on a dataset
 # -----------------------------------------------------------------------------
 
-import sys
+import fileinput
 import math
 
 
@@ -80,7 +80,11 @@ def input_reading():
     data = []
     start_reading = False
 
-    for line in sys.stdin:
+    lines = []
+    for line in fileinput.input():
+        lines.append(line)
+
+    for line in lines:
         # check if line is not a comment
         if line[0] is not '%':
             #remove spaces
