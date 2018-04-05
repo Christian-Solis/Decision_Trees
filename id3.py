@@ -152,11 +152,8 @@ def id3(data, attributes, attributes_list, attr, tabs, indx):
         # print("v->", v, "attributes->", attributes, "attributes_list->", attributes_list, "best_attr", best_attr, "tabs->", tabs)
         # print()
         id3(v, attributes, attributes_list, best_attr, tabs, indx)
+
         
-
-
-#     return tree
-
 # -----------------------------------------------------------------------------
 # Main function
 # -----------------------------------------------------------------------------
@@ -164,7 +161,9 @@ def id3(data, attributes, attributes_list, attr, tabs, indx):
 def main():
     # test = open('ID3.in','r')
     attributes, _, attributes_list, data = input_reading()
-    # print(data)
+    print(attributes)
+    print(attributes_list)
+    print(data)
     # getFrequency(data, attributes[attributes_list[-1]])
     # d = splitData(data, attributes[attributes_list[3]], 3)
     # for k, v in d.items():
