@@ -1,3 +1,4 @@
+# coding=utf-8
 # -----------------------------------------------------------------------------
 # Christian Ricardo Solís Cortés A01063685
 # Raúl Mar A00512318
@@ -7,6 +8,7 @@
 # -----------------------------------------------------------------------------
 
 import fileinput
+import sys
 import math
 
 
@@ -84,7 +86,7 @@ def input_reading():
     for line in fileinput.input():
         lines.append(line)
 
-    print(lines)
+    # print(lines)
 
     for line in lines:
         # check if line is not a comment
@@ -163,9 +165,10 @@ def id3(data, attributes, attributes_list, attr, tabs, indx):
 def main():
     # test = open('ID3.in','r')
     attributes, _, attributes_list, data = input_reading()
-    print(attributes)
-    print(attributes_list)
-    print(data)
+    print(sys.version)
+    # print(attributes)
+    # print(attributes_list)
+    # print(data)
     # getFrequency(data, attributes[attributes_list[-1]])
     # d = splitData(data, attributes[attributes_list[3]], 3)
     # for k, v in d.items():
