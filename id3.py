@@ -149,6 +149,7 @@ def main():
     #     s.add(d[i])
     # print(s)
     labels = attributes[attributes_list[-1]]
+    print(labels)
     # print(attributes_list)
     # print(attributes[label])
     id3(data, attributes, attributes_list, attributes_list[-1], -1, len(attributes_list) - 1, labels)
