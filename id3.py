@@ -53,7 +53,7 @@ def information_gain(total_entropy, values, labels):
 def input_reading():
     # Variables to save the according data
     data_relation = ''
-    attributes_data = {}
+    attributes_data = OrderedDict()
     attribute_list = []
     data = []
     start_reading = False
@@ -149,7 +149,7 @@ def main():
     #     s.add(d[i])
     # print(s)
     labels = attributes[attributes_list[-1]]
-    print(labels)
+    # print(labels)
     # print(attributes_list)
     # print(attributes[label])
     id3(data, attributes, attributes_list, attributes_list[-1], -1, len(attributes_list) - 1, labels)
