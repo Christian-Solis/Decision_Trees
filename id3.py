@@ -15,13 +15,18 @@ from collections import OrderedDict
 
 
 def splitData(data, attributes, idx):
-    values = {k:[] for k in attributes}
+    values = OrderedDict()
+    for k in attributes:
+        values[k] = []
     for d in data:    
         values[d[idx]].append(d)
     return values
 
 def getFrequency(data, labels):
-    values = {k:[] for k in labels}
+    # values = {k:[] for k in labels}
+    values = OrderedDict()
+    for k in labels:
+        values[k] = []
     for d in data: 
         values[d[-1]].append(d)
     return values
@@ -94,7 +99,7 @@ def id3(data, attributes, attributes_list, attr, tabs, indx, labels):
     freq_data = getFrequency(data, labels)
     e = entropy(freq_data, len(data))
     if e == 0.0:
-        space = "|"
+        space = " "
         if not data:
             # print(data)
             print("".join([space for _ in range(tabs*2)]) + "ANSWER: ")
@@ -103,14 +108,12 @@ def id3(data, attributes, attributes_list, attr, tabs, indx, labels):
             print("".join([space for _ in range(tabs*2)]) + "ANSWER: " + data[0][-1])
             return
     # get information gain for each of the attributes_list
-    new_entropies = {}
+    new_entropies = OrderedDict()
     for i, k in enumerate(attributes_list[:-1]):
         if k:
             attr_splitted = splitData(data, attributes[k], i)
             new_entropies[k] = information_gain(e, attr_splitted, attributes[attributes_list[-1]])
-    # if attr == 'having_IP_Address':
-    #     print(new_entropies)
-    #     return
+
     best_attr = max(new_entropies, key=new_entropies.get)
     new_split_values = splitData(data, attributes[best_attr], attributes_list.index(best_attr))
 
@@ -121,14 +124,7 @@ def id3(data, attributes, attributes_list, attr, tabs, indx, labels):
 
     for k, v in new_split_values.items():
         if v:
-            # if k == 'having_IP_Address':
-            #     # print('values->')
-            #     # for i in v:
-            #     #     print(i)
-            #     # print('best_attr->', best_attr, '\n')
-            #     return
-            #     # id3(v, attributes, attributes_list, best_attr, tabs, indx)
-            print("".join(["|" for _ in range(tabs*2)]) + best_attr + ": " + k)
+            print("".join([" " for _ in range(tabs*2)]) + best_attr + ": " + k)
             id3(v, attributes, attributes_list, best_attr, tabs, indx, labels)
 
         
