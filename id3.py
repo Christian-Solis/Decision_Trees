@@ -94,12 +94,13 @@ def id3(data, attributes, attributes_list, attr, tabs, indx, labels):
     freq_data = getFrequency(data, labels)
     e = entropy(freq_data, len(data))
     if e == 0.0:
+        space = " "
         if not data:
             # print(data)
-            print("".join([" " for _ in range(tabs*2)]) + "ANSWER: ")
+            print("".join([space for _ in range(tabs*2)]) + "ANSWER: ")
             return
         else:
-            print("".join([" " for _ in range(tabs*2)]) + "ANSWER: " + data[0][-1])
+            print("".join([space for _ in range(tabs*2)]) + "ANSWER: " + data[0][-1])
             return
     # get information gain for each of the attributes_list
     new_entropies = {}
