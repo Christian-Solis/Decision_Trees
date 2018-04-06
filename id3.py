@@ -90,25 +90,22 @@ def input_reading():
 
 def id3(data, attributes, attributes_list, attr, tabs, indx, labels):
     tabs += 1
-    print(tabs)
-    # print('hola')
     # splitted_values = splitData(data, attributes[attr], indx)
     freq_data = getFrequency(data, labels)
     e = entropy(freq_data, len(data))
     if e == 0.0:
         if not data:
             # print(data)
-            print(''.join([" " for _ in range(tabs*2)]) + 'ANSWER: ')
+            print("".join([" " for _ in range(tabs*2)]) + "ANSWER: ")
             return
         else:
-            print(''.join([" " for _ in range(tabs*2)]) + 'ANSWER: ' + data[0][-1])
+            print("".join([" " for _ in range(tabs*2)]) + "ANSWER: " + data[0][-1])
             return
     # get information gain for each of the attributes_list
     new_entropies = {}
     for i, k in enumerate(attributes_list[:-1]):
         if k:
             attr_splitted = splitData(data, attributes[k], i)
-            # print(attr_splitted)
             new_entropies[k] = information_gain(e, attr_splitted, attributes[attributes_list[-1]])
     # if attr == 'having_IP_Address':
     #     print(new_entropies)
