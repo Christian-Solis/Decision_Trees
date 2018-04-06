@@ -98,10 +98,10 @@ def id3(data, attributes, attributes_list, attr, tabs, indx, labels):
     if e == 0.0:
         if not data:
             # print(data)
-            print(''.join([' ' for _ in range(tabs*2)]) + 'ANSWER: ')
+            print(''.join([" " for _ in range(tabs*2)]) + 'ANSWER: ')
             return
         else:
-            print(''.join([' ' for _ in range(tabs*2)]) + 'ANSWER: ' + data[0][-1])
+            print(''.join([" " for _ in range(tabs*2)]) + 'ANSWER: ' + data[0][-1])
             return
     # get information gain for each of the attributes_list
     new_entropies = {}
