@@ -90,7 +90,7 @@ def input_reading():
 
 def id3(data, attributes, attributes_list, attr, tabs, indx, labels):
     tabs += 1
-    # print()
+    print(tabs)
     # print('hola')
     # splitted_values = splitData(data, attributes[attr], indx)
     freq_data = getFrequency(data, labels)
