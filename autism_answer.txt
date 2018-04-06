@@ -1,0 +1,22 @@
+result: 4
+  ANSWER: NO
+result: 3
+  ANSWER: NO
+result: 10
+  ANSWER: YES
+result: 7
+  ANSWER: YES
+result: 6
+  ANSWER: NO
+result: 9
+  ANSWER: YES
+result: 2
+  ANSWER: NO
+result: 0
+  ANSWER: NO
+result: 1
+  ANSWER: NO
+result: 8
+  ANSWER: YES
+result: 5
+  ANSWER: NO
