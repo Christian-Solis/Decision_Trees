@@ -94,7 +94,7 @@ def id3(data, attributes, attributes_list, attr, tabs, indx, labels):
     freq_data = getFrequency(data, labels)
     e = entropy(freq_data, len(data))
     if e == 0.0:
-        space = " "
+        space = "|"
         if not data:
             # print(data)
             print("".join([space for _ in range(tabs*2)]) + "ANSWER: ")
@@ -121,14 +121,14 @@ def id3(data, attributes, attributes_list, attr, tabs, indx, labels):
 
     for k, v in new_split_values.items():
         if v:
-            if k == 'having_IP_Address':
-                # print('values->')
-                # for i in v:
-                #     print(i)
-                # print('best_attr->', best_attr, '\n')
-                return
-                # id3(v, attributes, attributes_list, best_attr, tabs, indx)
-            print(''.join([' ' for _ in range(tabs*2)]) + best_attr + ': ' + k)
+            # if k == 'having_IP_Address':
+            #     # print('values->')
+            #     # for i in v:
+            #     #     print(i)
+            #     # print('best_attr->', best_attr, '\n')
+            #     return
+            #     # id3(v, attributes, attributes_list, best_attr, tabs, indx)
+            print("".join(["|" for _ in range(tabs*2)]) + best_attr + ": " + k)
             id3(v, attributes, attributes_list, best_attr, tabs, indx, labels)
 
         
@@ -138,18 +138,7 @@ def id3(data, attributes, attributes_list, attr, tabs, indx, labels):
 
 def main():
     attributes, _, attributes_list, data = input_reading()
-    # print(data)
-    # print(sys.version)
-    # i = attributes_list.index('result')
-    # s = set()
-    # for d in data:
-    #     # print(d[i])
-    #     s.add(d[i])
-    # print(s)
     labels = attributes[attributes_list[-1]]
-    # print(labels)
-    # print(attributes_list)
-    # print(attributes[label])
     id3(data, attributes, attributes_list, attributes_list[-1], -1, len(attributes_list) - 1, labels)
 
 if __name__ == '__main__':
